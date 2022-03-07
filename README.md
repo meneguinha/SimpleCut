@@ -1,7 +1,7 @@
 # SimpleCut
 Python script to CLIP videos.
 
-You need to install MoviePy, to do that, go to the terminal:
+You need to install MoviePy. Go to the terminal:
 
 pip install moviepy
 
