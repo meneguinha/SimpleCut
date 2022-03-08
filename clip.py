@@ -37,4 +37,4 @@ clip = clip.subclip(get_sec(start_time), get_sec(end_time))
 logo = ImageClip(full_path_logo).set_duration(clip.duration).set_pos(("center","bottom"))
 final = CompositeVideoClip([clip, logo])
 final_dest = path + slash + clip_name
-final.write_videofile(final_dest)
+final.write_videofile(final_dest, audio_codec='aac')
