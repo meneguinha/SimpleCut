@@ -12,3 +12,8 @@ You need to install this pytube version:
 You just need to edit the code to change filename, starting time and end time.
 
 You can add your own logo, by creating it on any software whit transparent background.
+
+There are 2 codes.
+
+yt-dl_and_clip --> Download YouTube Video and clip
+clip --> Just clip
