@@ -1,37 +1,26 @@
 import moviepy as mp
 from moviepy.editor import *
 import pathlib
-from pytube import YouTube
-from pytube.cli import on_progress
 
-#Change Youtube Link here
-yt_link = "https://youtu.be/3No3P2TscMA"
-#Change Time Here
-start_time = "00:26:03" 
-end_time =  "00:026:33"
-#Logo name
-logo_name = "watermark.png"
-#Final Name
-clip_name = "clip.mp4" 
-#Just some stuff
+#Put all files in the same directory as clip.py
+
+archive_name = "full.mp4" #Name of the video you want to clip
+clip_name = "clip.mp4" #Final name
+logo_name = "watermark.png" #Logo name
 slash = "\\"
-path = str(pathlib.Path(__file__).parent.resolve())
+start_time = "00:00:00" #Change here
+end_time =  "00:00:00" #Change Here
 
-#CORE
 def get_sec(time_str):
     """Get seconds from time."""
     h, m, s = time_str.split(':')
     return int(h) * 3600 + int(m) * 60 + int(s)
 
-print("YouTube video download in progress....\n\n")
-
-yt = YouTube(yt_link,on_progress_callback=on_progress)
-yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first().download(output_path = path , filename="full.mp4")
-archive_name = "full.mp4"
+path = str(pathlib.Path(__file__).parent.resolve())
 
 full_path = path + slash + archive_name
 full_path_logo = path + slash + logo_name
-print("Cutting video....")
+print(full_path)
 clip = VideoFileClip(full_path)
 clip = clip.subclip(get_sec(start_time), get_sec(end_time))
 logo = ImageClip(full_path_logo).set_duration(clip.duration).set_pos(("center","bottom"))
