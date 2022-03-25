@@ -7,7 +7,7 @@ You need to install MoviePy. Go to the terminal:
 
 You need to install this pytube version:
 
-`python -m pip install git+https://github.com/pytube/pytube`
+`pip3 install --upgrade pytube`
 
 You just need to edit the code to change filename, starting time and end time.
 
